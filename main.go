@@ -10,7 +10,6 @@ import (
 func main() {
 	router := gin.Default()
 	router.GET("/complete/:currentPercentage", calculateTimeToBeAt80Percent)
-	gin.SetMode(gin.ReleaseMode)
 	router.Run()
 }
 func calculateTimeToBeAt80Percent(c *gin.Context) {

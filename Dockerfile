@@ -1,7 +1,7 @@
 FROM golang:1.18.3-buster AS builder
 
 ARG VERSION=dev
-
+ENV GIN_MODE=release
 WORKDIR /go/src/app
 COPY main.go .
 COPY go.sum .
