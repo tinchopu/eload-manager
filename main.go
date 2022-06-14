@@ -28,8 +28,9 @@ func calculateTimeToBeAt80Percent(c *gin.Context) {
 	var kwToLoad float32 = batteryCapacity * float32(toLoad) / 100.0
 
 	var timeDuration float32 = (kwToLoad / maxload * float32(time.Hour))
-	timein := time.Now().Local().Add(time.Duration(timeDuration))
+	loc, _ := time.LoadLocation("Europe/Berlin")
+	timein := time.Now().In(loc).Add(time.Duration(timeDuration)).Format("2.1.2006 15:04")
 
-	c.String(http.StatusOK, timein.String())
+	c.String(http.StatusOK, timein)
 
 }
