@@ -1,5 +1,7 @@
 # eload-manager ⚡️☁️
 
+[![golang-pipeline](https://github.com/tinchopu/eload-manager/actions/workflows/push.yml/badge.svg)](https://github.com/tinchopu/eload-manager/actions/workflows/push.yml)
+
 Golang REST Service which calculates when the car battery will be loaded up to 80%
 
 I'm using this to calculate when the Nissan Leaf (62 KW Battery) will be loaded at 80% with a loading current of 16A. For that I'm passing the actual load as a REST GET parameter.
