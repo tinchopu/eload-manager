@@ -1,13 +1,7 @@
 FROM golang:1.18.3-buster AS builder
 
-ARG VERSION=dev
-WORKDIR /go/src/app
-COPY main.go .
-COPY go.sum .
-COPY go.mod .
 ENV USER=appuser
 ENV UID=10001
-
 
 # See https://stackoverflow.com/a/55757473/12429735RUN 
 RUN adduser \    
@@ -18,6 +12,12 @@ RUN adduser \
     --no-create-home \    
     --uid "${UID}" \    
     "${USER}"
+
+ARG VERSION=dev
+WORKDIR /go/src/app
+COPY main.go .
+COPY go.sum .
+COPY go.mod .
 
 RUN go build -o main -ldflags=-X=main.version=${VERSION} main.go 
 
