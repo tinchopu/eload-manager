@@ -21,7 +21,7 @@ RUN adduser \
 
 RUN go build -o main -ldflags=-X=main.version=${VERSION} main.go 
 
-FROM FROM scratch
+FROM scratch
 
 # Import the user and group files from the builder.
 COPY --from=builder /etc/passwd /etc/passwd
