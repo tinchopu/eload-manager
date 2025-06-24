@@ -1,4 +1,4 @@
-FROM golang:1.20.5-buster AS builder
+FROM golang:1.18.3-buster AS builder
 RUN useradd -u 10001 scratchuser
 
 WORKDIR /go/src/app
