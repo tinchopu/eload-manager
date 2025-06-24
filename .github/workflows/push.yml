@@ -8,9 +8,9 @@ jobs:
       - name: Extract Version
         id: version_step
         run: |
-          echo "##[set-output name=version;]VERSION=${GITHUB_REF#$"refs/tags/v"}"
-          echo "##[set-output name=version_tag;]"apuetz/eload-manager":${GITHUB_REF#$"refs/tags/v"}"
-          echo "##[set-output name=latest_tag;]"apuetz/eload-manager":latest"
+          echo "version=VERSION=${GITHUB_REF#$"refs/tags/v"}" >> $GITHUB_OUTPUT
+          echo "version_tag="apuetz/eload-manager":${GITHUB_REF#$"refs/tags/v"}" >> $GITHUB_OUTPUT
+          echo "latest_tag="apuetz/eload-manager":latest" >> $GITHUB_OUTPUT
       - name: Print Version
         run: |
           echo ${{steps.version_step.outputs.version_tag}}

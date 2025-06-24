@@ -1,4 +1,4 @@
-FROM golang:1.18.3-buster AS builder
+FROM golang:1.23-bookworm AS builder
 RUN useradd -u 10001 scratchuser
 
 WORKDIR /go/src/app
@@ -7,7 +7,7 @@ COPY go.sum .
 COPY go.mod .
 RUN go build -o main main.go 
 
-FROM gcr.io/distroless/base-debian10
+FROM gcr.io/distroless/base-debian12
 COPY --from=builder /go/src/app/main /go/bin/main
 COPY --from=builder /etc/passwd /etc/passwd
 ENV PATH="/go/bin:${PATH}"
