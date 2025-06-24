@@ -3,7 +3,7 @@
   "extends": [
     "config:recommended"
   ],
-  "enabledManagers": ["gomod", "github-actions"],
+  "enabledManagers": ["gomod", "github-actions", "dockerfile"],
   "gomod": {
     "enabled": true
   }
