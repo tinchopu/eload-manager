@@ -4,22 +4,6 @@
 “config:recommended”
 ],
 “enabledManagers”: [“gomod”, “github-actions”, “dockerfile”],
-“gomod”: {
-“enabled”: true
-},
-“github-actions”: {
-“enabled”: true
-},
-“dockerfile”: {
-“enabled”: true
-},
 “dependencyDashboard”: true,
-“dependencyDashboardTitle”: “Dependency Dashboard”,
-“prHourlyLimit”: 2,
-“prConcurrentLimit”: 10,
-“reviewers”: [],
-“assignees”: [],
-“labels”: [“dependencies”],
-“schedule”: [“before 4am on monday”],
-“timezone”: “UTC”
+“labels”: [“dependencies”]
 }
