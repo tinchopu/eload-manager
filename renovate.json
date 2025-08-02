@@ -11,5 +11,15 @@
   "dependencyDashboard": true,
   "labels": [
     "dependencies"
+  ],
+  "gomod": {
+    "enabled": true
+  },
+  "packageRules": [
+    {
+      "matchManagers": ["gomod"],
+      "matchDepTypes": ["golang"],
+      "enabled": true
+    }
   ]
 }
