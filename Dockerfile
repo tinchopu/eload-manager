@@ -1,4 +1,4 @@
-FROM golang:1.24-bookworm AS builder
+FROM golang:1.25-bookworm AS builder
 RUN useradd -u 10001 scratchuser
 
 WORKDIR /go/src/app
